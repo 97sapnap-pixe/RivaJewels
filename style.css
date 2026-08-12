@@ -28,7 +28,6 @@
     --radius: 16px;
     --radius-sm: 10px;
     --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --mobile-padding: 1rem;
 }
 
 html {
@@ -58,7 +57,7 @@ img {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--mobile-padding);
+    padding: 0 1rem;
 }
 
 /* ===== SCROLLBAR ===== */
@@ -130,6 +129,7 @@ h4,
     display: flex;
     align-items: center;
     gap: 0.3rem;
+    flex-shrink: 0;
 }
 
 .logo i {
@@ -164,8 +164,8 @@ h4,
 .top-announcement {
     background: var(--accent);
     color: var(--white);
-    padding: 0.4rem 0;
-    font-size: 0.7rem;
+    padding: 0.3rem 0;
+    font-size: 0.65rem;
     text-align: center;
     overflow: hidden;
 }
@@ -203,20 +203,22 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0.4rem 0;
+    padding: 0.3rem 0;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
+    flex-wrap: wrap;
 }
 
 .nav-search {
     display: flex;
     flex: 1;
-    max-width: 500px;
+    min-width: 150px;
+    max-width: 400px;
     background: var(--cream);
     border-radius: 50px;
     border: 1px solid rgba(201, 168, 124, 0.1);
@@ -231,23 +233,24 @@ header {
 
 .nav-search input {
     flex: 1;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border: none;
     background: transparent;
     font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--dark);
     outline: none;
     width: 100%;
+    min-width: 80px;
 }
 
 .nav-search input::placeholder {
     color: var(--gray);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 
 .nav-search button {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border: none;
     background: transparent;
     color: var(--gray-dark);
@@ -261,8 +264,9 @@ header {
 
 .nav-icons {
     display: flex;
-    gap: 0.8rem;
+    gap: 0.6rem;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .nav-icons a {
@@ -318,9 +322,9 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    padding-top: 0.5rem;
+    padding-top: 0.4rem;
     border-top: 1px solid rgba(201, 168, 124, 0.08);
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
 }
 
 .nav-menu a {
@@ -507,7 +511,7 @@ header {
     position: relative;
     width: 100%;
     height: 70vh;
-    min-height: 400px;
+    min-height: 350px;
     max-height: 600px;
     overflow: hidden;
     border-radius: 0 0 30px 30px;
@@ -1775,6 +1779,12 @@ footer {
     .back-to-top i {
         font-size: 1.3rem;
     }
+    .navbar {
+        flex-wrap: nowrap;
+    }
+    .nav-search {
+        min-width: 200px;
+    }
 }
 
 /* ============================================================
@@ -1865,6 +1875,7 @@ footer {
     }
     .nav-search {
         max-width: 400px;
+        min-width: 250px;
     }
     .nav-search input {
         font-size: 0.9rem;
